@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth")
 const userRoute = require("./routes/users")
+const postRoute = require("./routes/posts")
 
 //connect to db
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(morgan("common"));
 //routes
 app.use("/api/auth" , authRoute)
 app.use("/api/users" , userRoute)
+app.use("/api/posts" , postRoute)
 
 app.listen(5000, () => {
   console.log("Backend is running");
