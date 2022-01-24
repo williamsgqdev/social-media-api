@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      required: true,
+      require: true,
       min: 3,
       max: 20,
       unique: true,
@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
-    following: {
+    followings: {
       type: Array,
       default: [],
     },
@@ -60,4 +60,5 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", UserSchema);
+
